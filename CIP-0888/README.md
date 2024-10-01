@@ -1,7 +1,7 @@
 ---
 CIP: 888
 Title: Soulbound Tokens
-Status: Draft
+Status: Proposed
 Category: Tokens
 Authors:
   - Matías Falcone <matias.falcone@gmail.com>
@@ -33,7 +33,7 @@ For example, we might have a collection called "University X: Engineering Gradua
 
 ## Implementation: how does it work?
 
-The implementation allows developers to define constraints on each SBT collection (like a native script), a beneficiary and an **`Issued`** status. The tokens go to a script address that also adheres to the same constraints and additionally checks that the claimant matches the beneficiary and that the token status is **`Issued`**. If everything is okay, the `claim` only modifies the status to **`Claimed`** and sends it to the same address as before. This means that tokens in **`Claimed`** status could only be claimed by unique beneficiaries, certifying that the credential belongs to them, despite not being in their wallet.
+The implementation allows developers to define constraints on each SBT collection (like a native script), a beneficiary and an **`Issued`** status. The tokens go to a script address that also adheres to the same constraints and additionally checks that the claimant matches the beneficiary and that the token status is **`Issued`**. If everything is okay, the `claim` only modifies the status to **`Claimed`** and sends it to the same address as before. This means that tokens in **`Claimed`** status could have only be claimed by unique beneficiaries, certifying that the credential belongs to them, despite not being in their wallet.
 
 Finally, burning a token is allowed by anyone who meets the criteria that was initially stated in the policy (for example, they are among the signers). The token can be in either **`Issued`** or **`Claimed`** status. So even if the beneficiary claimed the token, it can be burnt.
 
